@@ -1,6 +1,7 @@
 import React from "react";
 import WorkExperience from "../Components/WorkExperience";
 import Button from "../Components/Button";
+import Logo from "../Images/comp.png";
 
 const ResumePage = () => {
   return (
@@ -16,7 +17,7 @@ const ResumePage = () => {
             "Designed 200+ wood products",
             "Launched design system",
           ]}
-          imageUrl="https://www.jotform.com/uploads/LindaJohansson/form_files/Asset%2055%402x.63886207f05e44.36459543.png"
+          imageUrl={Logo}
         />
         <WorkExperience
           date="2020-2023"
@@ -25,7 +26,7 @@ const ResumePage = () => {
             "Designed 100+ medicine box",
             "Certified Google UX Design course",
           ]}
-          imageUrl="https://www.jotform.com/uploads/LindaJohansson/form_files/MonoGoogle_Drive_2023-01-09_14-37-17-removebg-preview.63bbfcd3edd054.02282576.png"
+          imageUrl={Logo}
         />
         <WorkExperience
           date="2018-2020"
@@ -34,31 +35,28 @@ const ResumePage = () => {
             "Helped User research projects",
             "Created graphic universe",
           ]}
-          imageUrl="https://www.jotform.com/uploads/LindaJohansson/form_files/Monosnap_logo_-_Google_Drive_2023-01-09_14-38-06-removebg-preview.63bbfcfb5e7d18.57253223.png"
+          imageUrl={Logo}
         />
         <hr className="mt-8 mb-8" />
         <div>
           <h2 className="text-2xl font-bold mb-4">Education</h2>
           <div className="mb-4">
-            <p className="text-lg font-bold mb-2">
-              Bachelor of Science in Industrial Design
-            </p>
-            <p className="text-[12px]">
-              University of Design and Technology, 2014-2018
-            </p>
+            <p className="text-lg font-bold mb-2">Ordinary National Diploma</p>
+            <p className="text-[12px]">Lycee De Kigali, 2017-2019</p>
           </div>
           <div className="mb-4">
             <p className="text-lg font-bold mb-2">
-              Bachelor of Science in Industrial Design
+              Advanced National Diploma in Software Engineering Systems
             </p>
             <p className="text-[12px]">
-              University of Design and Technology, 2014-2018
+              University of Design and Technology, 2020-2023
             </p>
           </div>
         </div>
 
         <hr className="mt-8 mb-8" />
         <div className="mt-8 flex flex-col  lg:w-[80%] ml-6  lg:justify-between">
+          <Button label="Download Resume"  />
           <Button label="My Projects" />
           <Button label="Contact Me" />
         </div>
