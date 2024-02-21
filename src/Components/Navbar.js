@@ -14,7 +14,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar bg-white   border-b-2 border-t-2 border-red-100 fixed top-0 right-0 w-full  z-10 flex justify-between items-center py-6">
+    <nav className="navbar bg-white   border-b-2 border-t-2 border-grey-200 fixed top-0 right-0 w-full  z-10 flex justify-between items-center py-6">
       <div className="container mx-auto px-4">
         <button
           onClick={toggleMenu}
