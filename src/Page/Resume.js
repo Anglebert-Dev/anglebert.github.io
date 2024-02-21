@@ -48,15 +48,13 @@ const ResumePage = () => {
             <p className="text-lg font-bold mb-2">
               Advanced National Diploma in Software Engineering Systems
             </p>
-            <p className="text-[12px]">
-              University of Design and Technology, 2020-2023
-            </p>
+            <p className="text-[12px]">Rwanda Coding Academy, 2020-2023</p>
           </div>
         </div>
 
         <hr className="mt-8 mb-8" />
         <div className="mt-8 flex flex-col  lg:w-[80%] ml-6  lg:justify-between">
-          <Button label="Download Resume"  />
+          <Button label="Download Resume" />
           <Button label="My Projects" />
           <Button label="Contact Me" />
         </div>
