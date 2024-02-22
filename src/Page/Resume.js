@@ -10,9 +10,13 @@ import resume from "../utils/professional_resume.pdf";
 const ResumePage = () => {
   const handleDownloadResume = () => {
     const url = resume;
-    window.open(url, "blank");
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", "resume.pdf"); // Set the filename here
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
-
   return (
     <div className="container mx-auto p-8">
       <h1 className="text-3xl font-bold mt-[70px]">Resume</h1>
