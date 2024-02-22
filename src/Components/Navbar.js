@@ -1,18 +1,13 @@
 import React, { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("about");
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-  };
-
-  const handleLinkClick = (link) => {
-    setActiveLink(link);
-    setIsOpen(false); 
   };
 
   return (
@@ -26,9 +21,6 @@ function Navbar() {
           {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
 
-        {/* Close button */}
-        
-
         {/* Navigation Links */}
         <ul
           className={`navbar-nav ${
@@ -37,62 +29,38 @@ function Navbar() {
               : "hidden lg:flex lg:items-center lg:justify-end"
           } space-y-4 lg:space-y-0 lg:space-x-4`}
         >
-          <li
-            className={`nav-item text-gray-700 hover:text-gray-900 ${
-              activeLink === "about" ? "border-b-2 border-red-500 " : ""
-            }`}
-          >
-            <Link
-              to="/about"
-              onClick={() => handleLinkClick("about")}
-              className="nav-link"
-            >
-              About Me
-            </Link>
-          </li>
-          <li
-            className={`nav-item text-gray-700 hover:text-gray-900 ${
-              activeLink === "resume" ? "border-b-2 border-red-500 " : ""
-            }`}
-          >
-            <Link
-              to="/resume"
-              onClick={() => handleLinkClick("resume")}
-              className="nav-link"
-            >
-              Resume
-            </Link>
-          </li>
-          <li
-            className={`nav-item text-gray-700 hover:text-gray-900 ${
-              activeLink === "projects" ? "border-b-2 border-red-500 " : ""
-            }`}
-          >
-            <Link
-              to="/projects"
-              onClick={() => handleLinkClick("projects")}
-              className="nav-link"
-            >
-              My Projects
-            </Link>
-          </li>
-          <li
-            className={`nav-item text-gray-700 hover:text-gray-900 ${
-              activeLink === "contact" ? "border-b-2 border-red-500 " : ""
-            }`}
-          >
-            <Link
-              to="/contact"
-              onClick={() => handleLinkClick("contact")}
-              className="nav-link"
-            >
-              Contact Me
-            </Link>
-          </li>
+          <NavItem to="/" currentPath={location.pathname}>
+            About Me
+          </NavItem>
+          <NavItem to="/resume" currentPath={location.pathname}>
+            Resume
+          </NavItem>
+          <NavItem to="/projects" currentPath={location.pathname}>
+            My Projects
+          </NavItem>
+          <NavItem to="/contact" currentPath={location.pathname}>
+            Contact Me
+          </NavItem>
         </ul>
       </div>
     </nav>
   );
 }
+
+// Navigation Item component
+const NavItem = ({ to, currentPath, children }) => {
+  const isActive = currentPath === to;
+  return (
+    <li
+      className={`nav-item text-gray-700 hover:text-gray-900 ${
+        isActive ? "border-b-2 border-red-500 " : ""
+      }`}
+    >
+      <Link to={to} className="nav-link">
+        {children}
+      </Link>
+    </li>
+  );
+};
 
 export default Navbar;

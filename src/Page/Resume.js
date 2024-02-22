@@ -5,13 +5,12 @@ import Logo from "../Images/coseke.jpeg";
 import Logo1 from "../Images/emateli.jpeg";
 import Logo2 from "../Images/maks..jpeg";
 import Logo3 from "../Images/comp.png";
-import resume from "../utils/professional_resume.pdf"
+import resume from "../utils/professional_resume.pdf";
 
 const ResumePage = () => {
   const handleDownloadResume = () => {
     const url = resume;
-    window.open(url, "_blank");
-
+    window.open(url, "blank");
   };
 
   return (
@@ -89,7 +88,12 @@ const ResumePage = () => {
 
         <hr className="mt-8 mb-8" />
         <div className="mt-8 flex flex-col  lg:w-[80%] ml-6  lg:justify-between">
-          <button className="button mb-4 text-center" onClick={handleDownloadResume}>Download Resume</button>
+          <button
+            className="button mb-4 text-center"
+            onClick={handleDownloadResume}
+          >
+            Download Resume
+          </button>
           <Button label="My Projects" link="/projects" />
           <Button label="Contact Me" link="/contact" />
         </div>
