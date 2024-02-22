@@ -8,7 +8,7 @@ const WorkExperience = ({ date, position, description, imageUrl }) => {
           <img
             src={imageUrl}
             alt={position}
-            className="w-27 h-24 rounded-full mr-2 image"
+            className="w-28 h-28 object-contain b-1 border-2  border-grey-500 border-grey-100 rounded-full mr-2 image"
           />
         </div>
         <div className="desc">

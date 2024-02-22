@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { FiMenu } from "react-icons/fi";
+import { FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("about");
@@ -11,17 +12,22 @@ function Navbar() {
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
+    setIsOpen(false); 
   };
 
   return (
-    <nav className="navbar bg-white   border-b-2 border-t-2 border-grey-200 fixed top-0 right-0 w-full  z-10 flex justify-between items-center py-6">
+    <nav className="navbar bg-white border-b-2 border-t-2 border-grey-200 fixed top-0 right-0 w-full z-10 flex justify-between items-center py-6">
       <div className="container mx-auto px-4">
+        {/* Toggle button */}
         <button
           onClick={toggleMenu}
           className="block lg:hidden text-gray-700 hover:text-gray-900 focus:outline-none"
         >
-          <FiMenu size={24} />
+          {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
+
+        {/* Close button */}
+        
 
         {/* Navigation Links */}
         <ul
