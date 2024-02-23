@@ -1,5 +1,7 @@
 import React from "react";
 
+
+
 const Projects = ({ project }) => {
   const { title, images, clientHistory, problem, outcome } = project;
 

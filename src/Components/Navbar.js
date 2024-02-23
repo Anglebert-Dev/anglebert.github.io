@@ -12,16 +12,18 @@ function Navbar() {
 
   return (
     <nav className="navbar bg-white border-b-2 border-t-2 border-grey-200 fixed top-0 right-0 w-full z-10 flex justify-between items-center py-6">
-      <div className="container mx-auto px-4">
-        {/* Toggle button */}
-        <button
-          onClick={toggleMenu}
-          className="block lg:hidden text-gray-700 hover:text-gray-900 focus:outline-none"
-        >
-          {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-        </button>
-
-        {/* Navigation Links */}
+      <div className="container mx-auto px-4 lg:flex lg:justify-between lg:items-center">
+        <div>
+          <button
+            onClick={toggleMenu}
+            className="block lg:hidden text-gray-700 hover:text-gray-900 focus:outline-none"
+          >
+            {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          </button>
+          <Link to="/" className="hidden lg:block text-1xl font-bold  text-gray-800 ml-4 ">
+            Anglebert
+          </Link>
+        </div>
         <ul
           className={`navbar-nav ${
             isOpen
@@ -47,7 +49,6 @@ function Navbar() {
   );
 }
 
-// Navigation Item component
 const NavItem = ({ to, currentPath, children }) => {
   const isActive = currentPath === to;
   return (

@@ -1,9 +1,16 @@
 import React from "react";
 import Project from "../Components/Projects";
 import { projectsData } from "../utils/objects";
+import Button from "../Components/Button";
 
 const ProjectPage = () => {
-  // get the projects from the projectsData object
+
+
+  const handleGithubClick = () => {
+    window.open(
+      "https://github.com/Anglebert-Dev"
+    );
+  };
 
   return (
     <div className="container mx-auto mt-12 p-8  ">
@@ -16,6 +23,14 @@ const ProjectPage = () => {
             <Project key={index} project={project} />
           ))}
         </div>
+      </div>
+
+      <div className="mt-8 flex flex-col  lg:w-[80%] ml-6  lg:justify-between">
+        <button className="button mb-3 text-center" onClick={handleGithubClick}>
+          Check My Github
+        </button>
+        <Button label="Contact Me" link="/contact" />
+        <Button label="Home" link="/" />
       </div>
     </div>
   );
