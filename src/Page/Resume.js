@@ -84,7 +84,7 @@ const ResumePage = () => {
           </div>
           <div className="mb-4">
             <p className="text-lg font-bold mb-2">
-              Advanced National Diploma in Software Engineering Systems
+              Advanced National Diploma in Software Engineering 
             </p>
             <p className="text-[12px]">Rwanda Coding Academy, 2020-2023</p>
           </div>
